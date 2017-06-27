@@ -1,7 +1,7 @@
 # CodeM2017美团点评编程大赛初赛B轮参考题解
 ## 由施韩原同学贡献，仅供学习参考
 原题链接参见[牛客网](https://www.nowcoder.com/test/5599304/summary)
-
+<script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
 #题目
 - [x] 黑白树
 - [x] 送外卖2
@@ -18,7 +18,7 @@
 
 ---
 # 送外卖2
-$$3^q$$状压每个货物的（未领、已领、已到）状态，对于每层状态，保存现在在点 i 的最早到达时间，每一层用 dijkstra 暴力更新最早时间$O(n^2+m)$。
+$3^q$状压每个货物的（未领、已领、已到）状态，对于每层状态，保存现在在点 i 的最早到达时间，每一层用 dijkstra 暴力更新最早时间$O(n^2+m)$。
 复杂度$O(3^q*(n^2+m))$
 如果将图缩减为一个不超过 2q 个点的完全图（只留下订单涉及的点），两点之间的边长为原图最短路，复杂度可以优化为 $O(q(n^2+m) + 3^q * q^2)$。
 
