@@ -50,8 +50,8 @@ v=p*k^(r-1)+q<br>
 
 ---
 # 景区路线规划
-设f[t][now]表示在时间点t的时候，正好玩完编号为now的娱乐项目的可能性。由于期望的线性累加性可知，![](http://latex.codecogs.com/gif.latex?\ans=\sum_t\sum_{now}f[t][now]·h[now])(br)
-f[t][now]可以由动态规划求出，转移方程：(br)
-![](http://latex.codecogs.com/gif.latex?\f[t][now]=\sum_j\frac{f[t-c_{now}-t_j][v]}{num_v})(br)其中，j表示存在一条连接v和now的边j，且在t-c_now-w_j时刻，从v出发满足条件的点有num_v个。
+设f[t][now]表示在时间点t的时候，正好玩完编号为now的娱乐项目的可能性。由于期望的线性累加性可知，![](http://latex.codecogs.com/gif.latex?\ans=\sum_t\sum_{now}f[t][now]·h[now])<br>
+f[t][now]可以由动态规划求出，转移方程：<br>
+![](http://latex.codecogs.com/gif.latex?\f[t][now]=\sum_j\frac{f[t-c_{now}-t_j][v]}{num_v})<br>其中，j表示存在一条连接v和now的边j，且在t-c_now-w_j时刻，从v出发满足条件的点有num_v个。
 
 
