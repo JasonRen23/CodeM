@@ -40,7 +40,7 @@ v=p*k^(r-1)+q<br>
 不妨考虑暴力做法，我们在a和b中各枚举一个分界线，那么设分解线左边字符c的数目aL(c)，同理定义aL(c)，bL(c)，bR(c)，则显然答案为：
 ![](http://latex.codecogs.com/gif.latex?\\sum_{c\in\{A,C,G,T\}}min(a_{L(c)}+b_{L(c)}，a_{R(c)}+b_{R(c)}) <br>
 考虑固定a中的分界线即固定a_{L(c)}=p，a_{R(c)}=q，令t表示b中字符c的出现次数，k=bL(c)，则p+k<=q+t-k即k<=(q-p+t)/2时，min(aL(c)+bL(c)}，aR(c)+bR(c))=p+k，否则=q+t-k。
-不妨使用 ![](http://latex.codecogs.com/gif.latex?\c\in\{A,C,G,T\})时得到的四个不同的 k=(q-p+t)/2 分界线将 b 串分成至多 5 个部分，对于每个部分都需要求出 p+k 或 q+t-k 的和最大值。不妨对所有 16 种系数![](http://latex.codecogs.com/gif.latex?\\e(c)\in\{0,1\})，都使用区间数据结构维护  ![](http://latex.codecogs.com/gif.latex?\\sum_{c\in\{A,C,G,T\}}e(c)b_{L(c)})的最大值即可。
+不妨使用 ![](http://latex.codecogs.com/gif.latex?\c\in\{A,C,G,T\})时得到的四个不同的 k=(q-p+t)/2 分界线将 b 串分成至多 5 个部分，对于每个部分都需要求出 p+k 或 q+t-k 的和最大值。不妨对所有 16 种系数![](http://latex.codecogs.com/gif.latex?\e(c)\in\{0,1\})，都使用区间数据结构维护  ![](http://latex.codecogs.com/gif.latex?\\sum_{c\in\{A,C,G,T\}}e(c)b_{L(c)})的最大值即可。
 
 ---
 # 子串
@@ -52,6 +52,6 @@ v=p*k^(r-1)+q<br>
 # 景区路线规划
 设f[t][now]表示在时间点t的时候，正好玩完编号为now的娱乐项目的可能性。由于期望的线性累加性可知，![](http://latex.codecogs.com/gif.latex?\ans=\sum_t\sum_{now}f[t][now]·h[now])<br>
 f[t][now]可以由动态规划求出，转移方程：<br>
-![](http://latex.codecogs.com/gif.latex?\f[t][now]=\sum_j\frac{f[t-c_{now}-t_j][v]}{num_v})<br>其中，j表示存在一条连接v和now的边j，且在t-c_now-w_j时刻，从v出发满足条件的点有num_v个。
+![](http://latex.codecogs.com/gif.latex?\\f[t][now]=\sum_j\frac{f[t-c_{now}-t_j][v]}{num_v})<br>其中，j表示存在一条连接v和now的边j，且在t-c_now-w_j时刻，从v出发满足条件的点有num_v个。
 
 
