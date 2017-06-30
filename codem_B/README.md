@@ -38,7 +38,7 @@ v=p*k^(r-1)+q<br>
 ---
 # 合并字符串的价值
 不妨考虑暴力做法，我们在a和b中各枚举一个分界线，那么设分解线左边字符c的数目aL(c)，同理定义aL(c)，bL(c)，bR(c)，则显然答案为：
-![](http://latex.codecogs.com/gif.latex?\\sum_{c\in\{A,C,G,T\}}min(a_{L(c)}+b_{L(c)}，a_{R(c)}+b_{R(c)}) <br>
+![](http://latex.codecogs.com/gif.latex?\sum_{c\in\{A,C,G,T\}}min(a_{L(c)}+b_{L(c)}，a_{R(c)}+b_{R(c)}) <br>
 考虑固定a中的分界线即固定a_{L(c)}=p，a_{R(c)}=q，令t表示b中字符c的出现次数，k=bL(c)，则p+k<=q+t-k即k<=(q-p+t)/2时，min(aL(c)+bL(c)}，aR(c)+bR(c))=p+k，否则=q+t-k。
 不妨使用 ![](http://latex.codecogs.com/gif.latex?\c\in\{A,C,G,T\})时得到的四个不同的 k=(q-p+t)/2 分界线将 b 串分成至多 5 个部分，对于每个部分都需要求出 p+k 或 q+t-k 的和最大值。不妨对所有 16 种系数![](http://latex.codecogs.com/gif.latex?\e(c)\in\{0,1\})，都使用区间数据结构维护  ![](http://latex.codecogs.com/gif.latex?\\sum_{c\in\{A,C,G,T\}}e(c)b_{L(c)})的最大值即可。
 
